@@ -44,3 +44,10 @@ VALUES
     ('black and white', 
     'https://i.pinimg.com/564x/af/ad/19/afad1986f94cd7307f0ba7b676aee21b.jpg',
     1);
+
+INSERT INTO users
+    (username, email, password_encrypt)
+VALUES
+    ('christianleong', 
+    'christianleong@gmail.com',
+    '123pass');

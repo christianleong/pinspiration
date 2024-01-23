@@ -5,5 +5,10 @@
 <p><%= pinInfo.title %></p>
 <p><%= pinInfo.user_id %></p>
 
-<button>edit</button>
-<button>delete</button>
+<form action="/pin/<%= pinInfo.id %>?_method=put" method="post">
+    <button>edit</button>
+</form>
+
+<form action="/pin/<%= pinInfo.id %>?_method=delete" method="post">
+    <button>delete</button>
+</form>
