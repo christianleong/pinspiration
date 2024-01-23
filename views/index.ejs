@@ -1,0 +1,9 @@
+<h1>Pins page</h1>
+
+<% for(pin of pins) { %>
+
+    <a href="/pin/<%= pin.id %>">
+        <img src="<%= pin.image_url %>" alt="<%= pin.title %>">
+    </a>
+
+<% } %>
