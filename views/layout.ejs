@@ -9,9 +9,15 @@
 <body>
     <a href="/">Home</a>
     <a href="/pin">Explore</a>
+    <a href="/create">Create</a>
     <a href="/about">About</a>
+
     <a href="/login">Log In</a>
     <a href="/signup">Sign up</a>
+    
+    <form action="/logout?_method=delete" method="post">
+        <button>Logout</button>
+    </form>
     <%- body %>
 </body>
 </html>

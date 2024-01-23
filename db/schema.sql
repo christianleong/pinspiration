@@ -12,6 +12,7 @@ password_encrypt TEXT
 CREATE TABLE IF NOT EXISTS pins(
 id SERIAL PRIMARY KEY,
 title TEXT,
+description TEXT,
 image_url TEXT,
 user_id INTEGER
 );
@@ -25,9 +26,10 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS pins;
 
 INSERT INTO pins
-    (title, image_url, user_id)
+    (title, description, image_url, user_id)
 VALUES
-    ('PANTONE COLOR OF THE YEAR 2017', 
+    ('PANTONE COLOR OF THE YEAR 2017',
+    'image1', 
     'https://i.pinimg.com/564x/8b/59/6e/8b596e7cb0babff9e72717c6da802e06.jpg',
     1);
 
@@ -35,6 +37,7 @@ INSERT INTO pins
     (title, image_url, user_id)
 VALUES
     ('abstract', 
+    'image2', 
     'https://i.pinimg.com/564x/38/82/84/388284695feed6940587f33c848da25a.jpg',
     2);
 
@@ -42,6 +45,7 @@ INSERT INTO pins
     (title, image_url, user_id)
 VALUES
     ('black and white', 
+    'image3', 
     'https://i.pinimg.com/564x/af/ad/19/afad1986f94cd7307f0ba7b676aee21b.jpg',
     1);
 

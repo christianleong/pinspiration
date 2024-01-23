@@ -38,8 +38,9 @@ router.post("/login", (req, res) => {
         // res.render("login");
         return;
       }
+      req.session.userId = result.rows[0].id;
+      console.log(req.session.userId);
       res.redirect('/pin')
-
     });
   });
 })
@@ -115,5 +116,10 @@ router.post("/signup", (req, res) => {
     });
   });
 });
+
+// router.delete("/logout", (req, res) => {
+//   req.session.userId = null
+//   res.redirect("login")
+// })
 
 module.exports = router;
