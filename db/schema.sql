@@ -55,3 +55,8 @@ INNER JOIN users
 -- WHERE condition(s)
 -- ORDER BY column, … ASC/DESC
 -- LIMIT num_limit OFFSET num_offset;
+
+SELECT * FROM users
+    INNER JOIN pins
+        ON users.id = pins.user_id
+    WHERE pins.id = 2;

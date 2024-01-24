@@ -1,9 +1,11 @@
-<h1>Pins page</h1>
+<div class="index-wrapper">
 
-<% for(pin of pins) { %>
+    <% for(pin of pins) { %>
 
-    <a href="/pin/<%= pin.id %>">
-        <img src="<%= pin.image_url %>" alt="<%= pin.title %>">
-    </a>
+        <a href="/pin/<%= pin.id %>">
+            <img src="<%= pin.image_url %>" alt="<%= pin.title %>" class="index-images">
+        </a>
 
-<% } %>
+    <% } %>
+
+</div>

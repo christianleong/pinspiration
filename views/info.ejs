@@ -1,17 +1,26 @@
-<h1>Info page</h1>
+<div class="info-wrapper">
 
-<img src="<%= pinInfo.image_url %>" alt="">
+    <div class="image-info-wrapper">
+        <img src="<%= pinInfo.image_url %>" alt="" class="info-images">
+    </div>
 
-<p>Title: <%= pinInfo.title %></p>
-<p>Description: <%= pinInfo.description %></p>
-<p>Posted by: <%= pinInfo.username %></p>
+    <div class="details-info-wrapper">
+        <p>Title: <%= pinInfo.title %></p>
+        <p>Description: <%= pinInfo.description %></p>
+        <p>Posted by: <%= pinInfo.username %></p>
 
-<p><%= pin_ID %></p>
+        <% if (currentUser.id === pinInfo.user_id) { %>
+         
+            <form action="/pin/<%= pinInfo.id %>/edit" method="get">
+                <button>edit</button>
+            </form>
 
-<form action="/pin/<%= pinInfo.id %>?_method=put" method="post">
-    <button>edit</button>
-</form>
+            <form action="/pin/<%= pinInfo.id %>?_method=delete" method="post">
+                <button>delete</button>
+            </form>
 
-<form action="/pin/<%= pinInfo.id %>?_method=delete" method="post">
-    <button>delete</button>
-</form>
+        <% } %>
+
+    </div>
+
+</div>

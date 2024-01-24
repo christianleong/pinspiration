@@ -1,0 +1,24 @@
+<div class="info-wrapper">
+
+    <div class="image-info-wrapper">
+        <img src="<%= pinInfo.image_url %>" alt="" class="info-images">
+    </div>
+
+    <div class="details-info-wrapper">
+        <form action="/pin/<%= pinInfo.id %>?_method=put" method="post">
+            <p>Title: 
+                <input type="text" name="title" placeholder="New title">
+            </p>
+            <p>Description: 
+                <input type="text" name="description" placeholder="New description">
+            </p>
+            <p>Posted by: <%= pinInfo.username %></p>
+            <button>Submit</button>
+        </form>
+
+        <form action="/pin/<%= pinInfo.id %>" method="get">
+            <button>Cancel</button>
+        </form>
+    </div>
+
+</div>

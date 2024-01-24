@@ -1,16 +1,30 @@
-<h1>Create a new Pin</h1>
 
-<form action="/pin" method="post">
+<div class="box-wrapper">
 
-    <label for="">Title</label>
-    <input type="text" name="title" id="">
-    <br>
-    <label for="">Description</label>
-    <input type="text" name="description" id="">
-    <br>
-    <label for="">Image URL</label>
-    <input type="text" name="image_url" id="">
-    <br>
-    <button>Post</button>
+    <h1 class="create-header">Share your pinspiration</h1>
 
-</form>
+    <form action="/pin" method="post">
+
+        <label for="">Title</label>
+        <br>
+        <input type="text" name="title" id="">
+        <br>
+        <label for="">Description</label>
+        <br>
+        <input type="text" name="description" id="">
+        <br>
+        <label for="">Image URL</label>
+        <br>
+        <input type="text" name="image_url" id="">
+        <br>
+        <!-- <div class="hero">
+            <label for="input-file">
+                <input type="file" accept="image/*" id="input-file">
+            </label>
+        </div> -->
+
+        <button>Post</button>
+
+    </form>
+
+</div>
