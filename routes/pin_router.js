@@ -42,7 +42,7 @@ router.get("/pin/:id", (req, res) => {
     })
 })
 
-// edit/update info page and update db
+// show edit info page
 router.get("/pin/:id/edit", (req, res) => {
 
     let pin_ID = req.params.id;
@@ -61,6 +61,44 @@ router.get("/pin/:id/edit", (req, res) => {
     });
 
 })
+
+// update info page and db
+router.put("/pin/:id", (req, res) => {
+    let title = req.body.title
+    let description = req.body.description
+    let pin_ID = req.params.id
+    
+    const sql = `
+        UPDATE pins
+        SET title=$1,
+            description=$2
+        WHERE id=$3;`;
+
+    db.query(sql, [title, description, pin_ID], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect(`/pin/${pin_ID}`)
+    });
+
+});
+
+// delete pin from index page and db
+router.delete("/pin/:id", (req, res) => {
+    let pin_ID = req.params.id
+
+    const sql = `
+    DELETE FROM pins
+    WHERE id = $1;`
+
+    db.query(sql, [pin_ID], (err, result) => {
+        if (err) {
+            console.log(err);
+        }
+        res.redirect('/pin')
+    })
+
+});
 
 // get into the create page
 router.get("/create", ensureLoggedIn,(req, res) => {
@@ -95,15 +133,3 @@ router.post("/pin", (req, res) => {
 })
 
 module.exports = router;
-
-
-// {
-//   id: 2,
-//   username: 'christianleong',
-//   email: 'christianleong@gmail.com',
-//   password_encrypt: '$2b$10$m5FXJ90L3GokUCyImoXXWuq6H.46mSTRu0HzWk9xjjwCYN5w7E4vm',
-//   title: 'abstract',
-//   description: 'image2',
-//   image_url: 'https://i.pinimg.com/564x/38/82/84/388284695feed6940587f33c848da25a.jpg',
-//   user_id: 1
-// }

@@ -9,15 +9,20 @@
         <p>Description: <%= pinInfo.description %></p>
         <p>Posted by: <%= pinInfo.username %></p>
 
+        <br>
+
         <% if (currentUser.id === pinInfo.user_id) { %>
          
             <form action="/pin/<%= pinInfo.id %>/edit" method="get">
-                <button>edit</button>
+                <button class="blue-button">edit</button>
             </form>
 
             <form action="/pin/<%= pinInfo.id %>?_method=delete" method="post">
-                <button>delete</button>
+                <button class="red-button">delete</button>
             </form>
+
+            <a href="" class="heart"></a>
+            
 
         <% } %>
 
