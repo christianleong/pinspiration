@@ -34,19 +34,11 @@ VALUES
     1);
 
 INSERT INTO pins
-    (title, image_url, user_id)
+    (title, description, image_url, user_id)
 VALUES
-    ('abstract', 
+    ('abstract',
     'image2', 
     'https://i.pinimg.com/564x/38/82/84/388284695feed6940587f33c848da25a.jpg',
-    2);
-
-INSERT INTO pins
-    (title, image_url, user_id)
-VALUES
-    ('black and white', 
-    'image3', 
-    'https://i.pinimg.com/564x/af/ad/19/afad1986f94cd7307f0ba7b676aee21b.jpg',
     1);
 
 INSERT INTO users
@@ -55,3 +47,11 @@ VALUES
     ('christianleong', 
     'christianleong@gmail.com',
     '123pass');
+
+SELECT *
+FROM pins
+INNER JOIN users
+    ON pins.user_id = users.id;
+-- WHERE condition(s)
+-- ORDER BY column, … ASC/DESC
+-- LIMIT num_limit OFFSET num_offset;

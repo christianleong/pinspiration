@@ -5,14 +5,13 @@ const app = express();
 const port = 8500; // http://localhost:8080
 const expressLayouts = require("express-ejs-layouts");
 const requestLogger = require("./middlewares/requestLogger")
-// const setCurrentUser = require("./middlewares/set_current_user");
+const setCurrentUser = require("./middlewares/set_current_user");
 const session = require("express-session");
+const methodOverride = require("method-override");
 
 const homeRouter = require("./routes/home_router");
 const pinRouter = require("./routes/pin_router");
 const sessionRouter = require("./routes/session_router");
-
-
 
 app.set("view engine", "ejs");
 
@@ -20,7 +19,7 @@ app.use(express.static("public"));
 app.use(expressLayouts);
 app.use(express.urlencoded({ extended: true }));
 app.use(requestLogger);
-// app.use(setCurrentUser)
+app.use(methodOverride("_method"));
 
 app.use(session({
     secret: "mistyrose",
@@ -28,6 +27,8 @@ app.use(session({
     saveUninitialized: true,
   })
 );
+
+app.use(setCurrentUser);
 
 app.use(homeRouter);
 app.use(pinRouter);

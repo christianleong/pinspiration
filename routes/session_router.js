@@ -107,8 +107,8 @@ router.post("/signup", (req, res) => {
                 res.render("signup");
                 return;
               }
-              res.send("user added");
-              // res.render("login");
+              req.session.userId = result.rows[0].id;
+              res.redirect("/pin");
             }
           );
         });
@@ -117,9 +117,13 @@ router.post("/signup", (req, res) => {
   });
 });
 
-// router.delete("/logout", (req, res) => {
-//   req.session.userId = null
-//   res.redirect("login")
-// })
+router.delete("/logout", (req, res) => {
+  req.session.userId = null
+  res.redirect("/")
+})
+
+router.get("/forgotpassword", (req, res) => {
+  res.render("forgot_password")
+})
 
 module.exports = router;

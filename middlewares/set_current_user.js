@@ -1,4 +1,4 @@
-/* // setup an currentUser object to available everywhere when an user is logged in
+// setup an currentUser object to available everywhere when an user is logged in
 const db = require("../db");
 
 function setCurrentUser(req, res, next) {
@@ -29,4 +29,4 @@ function setCurrentUser(req, res, next) {
   });
 }
 
-module.exports = setCurrentUser; */
+module.exports = setCurrentUser;

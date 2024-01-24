@@ -4,20 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900;1,6..12,1000&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="/pin">Explore</a>
-    <a href="/create">Create</a>
-    <a href="/about">About</a>
-
-    <a href="/login">Log In</a>
-    <a href="/signup">Sign up</a>
     
-    <form action="/logout?_method=delete" method="post">
-        <button>Logout</button>
-    </form>
+    <div class="navbar">
+
+        <nav class="left">
+            <a href="/">Home</a>
+            <a href="/pin">Explore</a>
+            <a href="/create">
+                <button class="create-button" role="button">Create</button>
+            </a>
+
+        </nav>
+
+        <% if (isLoggedIn) { %>
+            <nav class="middle">
+                <form action="" method="get">
+                    <input type="text" placeholder="Search" class="searchbar">
+                </form>
+            </nav>
+        <% } %>
+
+        <nav class="right">
+            <a href="/about">About</a>
+            <% if (isLoggedIn) { %>
+                <form action="/logout?_method=delete" method="post">
+                    <button class="session-button" role="button">Logout</button>
+                </form>
+            <% } else { %>
+                <a class="session-button" href="/login">Log In</a>
+                <a class="session-button" href="/signup">Sign up</a>
+            <% } %>
+        </nav>
+
+    </div>
+
     <%- body %>
 </body>
 </html>
+

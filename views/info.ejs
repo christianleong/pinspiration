@@ -2,8 +2,11 @@
 
 <img src="<%= pinInfo.image_url %>" alt="">
 
-<p><%= pinInfo.title %></p>
-<p><%= pinInfo.user_id %></p>
+<p>Title: <%= pinInfo.title %></p>
+<p>Description: <%= pinInfo.description %></p>
+<p>Posted by: <%= pinInfo.username %></p>
+
+<p><%= pin_ID %></p>
 
 <form action="/pin/<%= pinInfo.id %>?_method=put" method="post">
     <button>edit</button>
