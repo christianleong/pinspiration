@@ -26,7 +26,6 @@ router.post("/login", (req, res) => {
     // check if user exist
     if (result.rows.length === 0) {
       res.send('User does not exist, please sign up')
-      // res.render("login");
       return;
     }
 
@@ -35,11 +34,9 @@ router.post("/login", (req, res) => {
     bcrypt.compare(inputPassword, hashedPass, (err, isPasswordCorrect) => {
       if (!isPasswordCorrect) {
         res.send('Incorrect password')
-        // res.render("login");
         return;
       }
       req.session.userId = result.rows[0].id;
-      console.log(req.session.userId);
       res.redirect('/pin')
     });
   });
@@ -69,7 +66,6 @@ router.post("/signup", (req, res) => {
 
     if (result.rows.length > 0) {
       res.send("This username is already being used, please choose a new one.");
-      // res.render("signup");
       return;
     }
 
@@ -83,7 +79,6 @@ router.post("/signup", (req, res) => {
     
       if (result.rows.length > 0) {
         res.send("Email address already exists");
-        // res.render("signup");
         return;
       }
 
@@ -117,11 +112,13 @@ router.post("/signup", (req, res) => {
   });
 });
 
+// log the user out and reset userId to null
 router.delete("/logout", (req, res) => {
   req.session.userId = null
   res.redirect("/")
 })
 
+// this feature is not done yet
 router.get("/forgotpassword", (req, res) => {
   res.render("forgot_password")
 })

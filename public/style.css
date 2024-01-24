@@ -233,3 +233,7 @@ nav > a{
     padding: 4px 0;
 }
 
+.error-message {
+    color: red;
+    margin-top: 20px;
+}
