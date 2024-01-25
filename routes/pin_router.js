@@ -6,6 +6,23 @@ const ensureLoggedIn = require("../middlewares/ensure_logged_in");
 // get into index page displaying all the images
 router.get("/pin", (req, res) => {
     
+    if (req.query.q) {
+        let keyword = req.query.q
+
+        const sql = `
+        SELECT * FROM pins
+        WHERE LOWER(title) LIKE LOWER('%' || $1 || '%');`
+
+        db.query(sql, [keyword], (err, result) => {
+            if (err) {
+                console.log(err);
+            }
+            let pins = result.rows
+            res.render("index", { pins: pins });
+            return
+        })
+    }
+
     const sql = `SELECT * FROM pins;`
     
     db.query(sql, (err, result) => {
@@ -14,6 +31,7 @@ router.get("/pin", (req, res) => {
         }
         let pins = result.rows
         res.render("index", {pins: pins})
+        return
     })
 });
 

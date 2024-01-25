@@ -16,9 +16,15 @@ INSERT INTO pins (title, description, image_url, user_id) VALUES ('Tree','Tree a
 INSERT INTO pins (title, description, image_url, user_id) VALUES ('The Smart Cat and The Great Wave','Discover the mesmerizing world of ''The Smart Cat and The Great Wave''', 'https://i.pinimg.com/564x/09/80/17/09801754cdc3041b172874922d69ee82.jpg',1);
 INSERT INTO pins (title, description, image_url, user_id) VALUES ('Blue Bottle','Blue art', 'https://i.pinimg.com/564x/2c/ec/c4/2cecc4941a62a36a8114312c89a0fb0b.jpg',3);
 INSERT INTO pins (title, description, image_url, user_id) VALUES ('Stormy Ocean','Stormy Ocean', 'https://i.pinimg.com/564x/4a/96/11/4a9611b80d064c6dfa8e433acee3696a.jpg',1);
+INSERT INTO pins (title, description, image_url, user_id) VALUES ('Cute cat','cat', 'https://i.pinimg.com/564x/81/42/9a/81429a2a1593b52bc4a87be8b4894391.jpg',1);
+INSERT INTO pins (title, description, image_url, user_id) VALUES ('Cute cat 2','cat', 'https://i.pinimg.com/564x/d8/c2/56/d8c256df0d1b3d0d40cb7494dc729e3a.jpg',1);
+
 
 INSERT INTO users (username, email) VALUES('cl1', 'cl1@gmail.com');
 INSERT INTO users (username, email) VALUES('cl2', 'cl2@gmail.com');
 INSERT INTO users (username, email) VALUES('cl3', 'cl3@gmail.com');
 INSERT INTO users (username, email) VALUES('cl4', 'cl4@gmail.com');
 INSERT INTO users (username, email) VALUES('cl5', 'cl5@gmail.com');
+
+SELECT * FROM pins
+WHERE title LIKE 'nike';

@@ -29,3 +29,6 @@ SELECT * FROM users
 INNER JOIN pins
     ON users.id = pins.user_id
 WHERE pins.id = 2;
+
+SELECT * FROM pins
+WHERE LOWER(title) LIKE LOWER('%$1%');
