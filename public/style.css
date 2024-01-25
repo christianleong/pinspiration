@@ -236,3 +236,8 @@ nav > a{
     color: red;
     margin-top: 20px;
 }
+
+.info-title {
+    font-size: 24px;
+    font-weight: 700;
+}

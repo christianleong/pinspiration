@@ -19,8 +19,8 @@ router.get("/pin", (req, res) => {
             }
             let pins = result.rows
             res.render("index", { pins: pins });
-            return
         })
+        return
     }
 
     const sql = `SELECT * FROM pins;`
@@ -31,7 +31,6 @@ router.get("/pin", (req, res) => {
         }
         let pins = result.rows
         res.render("index", {pins: pins})
-        return
     })
 });
 
