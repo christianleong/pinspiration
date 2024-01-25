@@ -1,7 +1,7 @@
 # Pinspiration | CRUD application
 Welcome to Pinspiration! A CRUD app where users can upload their inspirations to the world. This project was inspired by Pinterest.
 
-:point_right: **Live Project:** [Click here to see my live project!]()
+:point_right: **Live Project:** [Click here to view my project on Render!](https://pinspiration-r3vl.onrender.com)
 
 TO BE UPDATED
 
@@ -43,6 +43,7 @@ TO BE UPDATED
 ### Key takeaways
 - My planning process on Trello can be improved by listing out the features that the user may want on each page, instead of listing out a to-do list.
 - I need to structure my steps better and avoid feature creep to work more efficiently and reduce potential bugs in the future.
+- Minimise time spent on building wireframe on figma. Hand sketch is fine.
 ### Personal challenges
 - The sign up page was a bit tricky especially with the nested if statements to check if the username is already taken and email address already exists, otherwise the user may proceed to sign up.
 - The info page was also tricky because I had to join the database tables to display data from both tables (ie. title and description from pins database, and username from the users database)
